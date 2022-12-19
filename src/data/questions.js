@@ -32,7 +32,23 @@ const questions = [
         difficulty: "Easy",
         description: "You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?",
         link: "https://leetcode.com/problems/climbing-stairs/",
-        resources: [],
+        resources: [
+            {
+                resourceType: "video",
+                link: "https://www.youtube.com/watch?v=uHAToNgAPaM",
+                title: "GOOGLE CODING INTERVIEW QUESTION - CLIMBING STAIRS (LeetCode)"
+            },
+            {
+                resourceType: "video",
+                link: "https://www.youtube.com/watch?v=ZMNRb9TYiQM",
+                title: "LeetCode 70. Climbing Stairs - Interview Prep Ep 72"
+            },
+            {
+                resourceType: "video",
+                link: "https://www.youtube.com/watch?v=qhDXejbprJk",
+                title: "LeetCode 70. Climbing Stairs [Algorithm + Code Explained ] Best Solution"
+            },
+        ],
     },
     {
         title: "Merge K Sorted Lists",

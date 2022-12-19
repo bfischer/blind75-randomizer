@@ -9,7 +9,8 @@ import {
     AccordionButton,
     AccordionPanel,
     AccordionIcon,
-    Link } from '@chakra-ui/react'
+    Link,
+    Tag } from '@chakra-ui/react'
 import styles from "./Randomizer.module.css";
 import questions from "../../data/questions";
 
@@ -79,9 +80,12 @@ const Randomizer = (props) => {
         <div className={styles['randomizer']}>
             <div className={styles['randomizer-content']}>
                 <div className={styles['randomizer-header']}>
-                    <h1 className={styles['randomizer-question-title']}>
-                        {question.title}
-                    </h1>
+                    <div>
+                        <h1 className={styles['randomizer-question-title']}>
+                            {question.title}{}
+                        </h1>
+                        <Tag>{question.category}</Tag>
+                    </div>
                     <div className={styles['randomizer-question-difficulty']}>
                         {getDifficultyBadge()}
                     </div>
