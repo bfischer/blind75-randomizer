@@ -29,7 +29,7 @@ const Randomizer = (props) => {
 
     React.useEffect(() => {
         setQuestion(getRandomQuestion());
-    }, [getRandomQuestion])
+    }, [])
 
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
