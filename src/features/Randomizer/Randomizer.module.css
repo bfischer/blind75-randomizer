@@ -1,0 +1,14 @@
+.randomizer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+}
+
+.randomizer .randomizer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    top: 100px;
+}
