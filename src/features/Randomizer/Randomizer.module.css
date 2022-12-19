@@ -1,8 +1,8 @@
 .randomizer {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: left;
+    width: 100%;
 }
 
 .randomizer .randomizer-content {
