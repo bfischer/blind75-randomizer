@@ -28,25 +28,25 @@ const Randomizer = (props) => {
     const [filters, setFilters] = React.useState(initialFilterState);
 
     React.useEffect(() => {
-        setQuestion(getRandomQuestion());
+        setQuestion(questions[getRandomInt(questions.length)]);
     }, [])
 
-    function getRandomInt(max) {
-        return Math.floor(Math.random() * max);
-    }
-
-    function getRandomQuestion() {
+    const getRandomQuestion = () => {
         let currentFilters = Object.keys(filters).filter(key => filters[key]);
         let filteredQuestions = questions.filter(q => currentFilters.includes(q.difficulty.toLowerCase()));
 
         return filteredQuestions[getRandomInt(filteredQuestions.length)];
     }
 
-    function handleNewQuestion() {
+    const getRandomInt = (max) => {
+        return Math.floor(Math.random() * max);
+    }
+
+    const handleNewQuestion = () => {
         setQuestion(getRandomQuestion());
     }
 
-    function getDifficultyBadge() {
+    const getDifficultyBadge = () => {
         let difficulty = question.difficulty.toLowerCase();
 
         if(difficulty === "easy") {
@@ -59,7 +59,7 @@ const Randomizer = (props) => {
         return <Badge colorScheme={'red'}>Hard</Badge>
     }
 
-    function handleFilterChange(filter) {
+    const handleFilterChange = (filter) => {
         let newFilters = {...filters};
         newFilters[filter] = !filters[filter];
 
@@ -73,7 +73,7 @@ const Randomizer = (props) => {
         setFilters(newFilters);
     }
 
-    function renderQuestionResources() {
+    const renderQuestionResources = () => {
         if(!question.resources || !question.resources.length) return null;
 
         return <>
