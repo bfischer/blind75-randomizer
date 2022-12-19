@@ -4,25 +4,42 @@ import {
     Button, 
     ButtonGroup, 
     Badge, 
+    Checkbox,
+    CheckboxGroup,
     Accordion,
     AccordionItem,
     AccordionButton,
     AccordionPanel,
     AccordionIcon,
     Link,
+    Stack,
     Tag } from '@chakra-ui/react'
 import styles from "./Randomizer.module.css";
 import questions from "../../data/questions";
 
+const initialFilterState = {
+    easy: true,
+    medium: true,
+    hard: true
+}
+
 const Randomizer = (props) => {
-    const [question, setQuestion] = React.useState(getRandomQuestion());
+    const [question, setQuestion] = React.useState(null);
+    const [filters, setFilters] = React.useState(initialFilterState);
+
+    React.useEffect(() => {
+        setQuestion(getRandomQuestion());
+    }, [getRandomQuestion])
 
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
     }
 
     function getRandomQuestion() {
-        return questions[getRandomInt(questions.length)];
+        let currentFilters = Object.keys(filters).filter(key => filters[key]);
+        let filteredQuestions = questions.filter(q => currentFilters.includes(q.difficulty.toLowerCase()));
+
+        return filteredQuestions[getRandomInt(filteredQuestions.length)];
     }
 
     function handleNewQuestion() {
@@ -40,6 +57,20 @@ const Randomizer = (props) => {
         }
 
         return <Badge colorScheme={'red'}>Hard</Badge>
+    }
+
+    function handleFilterChange(filter) {
+        let newFilters = {...filters};
+        newFilters[filter] = !filters[filter];
+
+        //C heck if every filter is set to false,
+        // if so, don't allow it. 
+        // We want to prevent the user from unchecking all filters.
+        let enabledFilters = Object.keys(newFilters).filter(key => newFilters[key]);
+
+        if(!enabledFilters || !enabledFilters.length) return;
+
+        setFilters(newFilters);
     }
 
     function renderQuestionResources() {
@@ -61,9 +92,9 @@ const Randomizer = (props) => {
                             Check out these resources!
 
                             {
-                                question.resources.map((resource) => {
-                                    return <div className={styles['randomizer-question-resource']}>
-                                        <Link color='teal.500' href={resource.link}>
+                                question.resources.map((resource, index) => {
+                                    return <div key={`${index} + ${resource.link}`}className={styles['randomizer-question-resource']}>
+                                        <Link color='teal.500' href={resource.link} isExternal>
                                             {resource.title}
                                         </Link>
                                     </div>
@@ -75,6 +106,8 @@ const Randomizer = (props) => {
             </div>
         </>
     }
+
+    if(!question) return null;
 
     return <>
         <div className={styles['randomizer']}>
@@ -95,12 +128,25 @@ const Randomizer = (props) => {
                 </div>
                 <div className={styles['randomizer-link']}>
                     <p>Try it out! </p>
-                    <Link color='teal.500' href={question.link}>
+                    <Link color='teal.500' href={question.link} isExternal>
                         {question.link}
                     </Link>
                 </div>
                 {renderQuestionResources()}
                 <div className={styles['randomizer-navigation']}>
+                    <CheckboxGroup>
+                        <Stack spacing={[1, 5]} direction={['column', 'row']}>
+                            <Checkbox size='md' isChecked={filters.easy} onChange={() => handleFilterChange("easy")}>
+                                Easy
+                            </Checkbox>
+                            <Checkbox size='md'isChecked={filters.medium} onChange={() => handleFilterChange("medium")}>
+                                Medium
+                            </Checkbox>
+                            <Checkbox size='md' isChecked={filters.hard} onChange={() => handleFilterChange("hard")}>
+                                Hard
+                            </Checkbox>
+                        </Stack>
+                    </CheckboxGroup>
                     <ButtonGroup>
                         <Button colorScheme='teal' size='sm' onClick={handleNewQuestion}>
                             Pick a new question!

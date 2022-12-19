@@ -17,3 +17,10 @@
     display: flex;
     gap: 20px;
 }
+
+.randomizer .randomizer-navigation {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    gap: 15px;
+}

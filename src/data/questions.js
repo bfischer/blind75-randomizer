@@ -19,6 +19,70 @@ const questions = [
         ],
     },
     {
+        title: "Best Time to Buy and Sell Stock",
+        category: "Arrays",
+        difficulty: "Easy",
+        description: "You are given an array prices where prices[i] is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+        link: "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+        resources: [
+            {
+                resourceType: "video",
+                link: "https://www.youtube.com/watch?v=3RHCb8LY-X4",
+                title: "LeetCode Best Time to Buy and Sell Stock Solution Explained - Java"
+            },
+            {
+                resourceType: "video",
+                link: "https://www.youtube.com/watch?v=9ZMMNyHy3z4",
+                title: "LeetCode Solution - 121 Best time to Buy and Sell Stock | Javascript"
+            },
+        ],
+    },
+    {
+        title: "Contains Duplicate",
+        category: "Arrays",
+        difficulty: "Easy",
+        description: "Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.",
+        link: "https://leetcode.com/problems/contains-duplicate/",
+    },
+    {
+        title: "Product of Array Except Self",
+        category: "Arrays",
+        difficulty: "Medium",
+        description: "Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i]. The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer. You must write an algorithm that runs in O(n) time and without using the division operation.",
+        link: "https://leetcode.com/problems/product-of-array-except-self/",
+        resources: [
+            {
+                resourceType: "video",
+                link: "https://www.youtube.com/watch?v=tSRFtR3pv74",
+                title: "LeetCode 238. Product of Array Except Self (Solution Explained)"
+            },
+            {
+                resourceType: "video",
+                link: "https://www.youtube.com/watch?v=gREVHiZjXeQ",
+                title: "Product of array except self | Leetcode #238"
+            },
+        ],
+    },
+    {
+        title: "Maxiumum Subarray",
+        category: "Arrays",
+        difficulty: "Medium",
+        description: "Given an integer array nums, find the subarray which has the largest sum and return its sum.",
+        link: "https://leetcode.com/problems/maximum-subarray/",
+        resources: [
+            {
+                resourceType: "video",
+                link: "https://www.youtube.com/watch?v=jnoVtCKECmQ",
+                title: "Kadane's Algorithm - Maximum Sum Subarray (Amazon Coding Interview Question)"
+            },
+            {
+                resourceType: "video",
+                link: "https://www.youtube.com/watch?v=A6foafQNih8",
+                title: "Leetcode - Maximum Subarray (Python)"
+            },
+        ],
+    },
+    {
         title: "Sum of Two Integers",
         category: "Binary Manipulation",
         difficulty: "Medium",
