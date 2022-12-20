@@ -1,6 +1,6 @@
 import styles from './App.module.css';
 import Navbar from './components/Navbar';
-import Randomizer from "./features/Randomizer";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
         <Navbar />
       </div>
       <div className={styles['content']}>
-        <Randomizer />
+        <AppRoutes />
       </div>
       <div className={styles['footer']}>
       </div>

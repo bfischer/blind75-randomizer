@@ -8,9 +8,9 @@
 .randomizer .randomizer-content {
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 35px;
     position: relative;
-    top: 100px;
+    top: 45px;
 }
 
 @media screen and (max-width: 480px) {
