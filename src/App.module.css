@@ -29,6 +29,7 @@
   .app .content {
     margin: 0;
     padding: 25px;
+    overflow: auto;
   }
 }
 
