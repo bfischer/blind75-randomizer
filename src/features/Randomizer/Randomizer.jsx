@@ -15,6 +15,7 @@ import {
     Stack,
     Tag } from '@chakra-ui/react'
 import styles from "./Randomizer.module.css";
+import HtmlRenderer from "../../components/HtmlRenderer";
 import questions from "../../data/questions";
 
 const initialFilterState = {
@@ -90,16 +91,17 @@ const Randomizer = (props) => {
                         </h2>
                         <AccordionPanel pb={4}>
                             Check out these resources!
-
+                            <ul>
                             {
                                 question.resources.map((resource, index) => {
-                                    return <div key={`${index} + ${resource.link}`}className={styles['randomizer-question-resource']}>
+                                    return <li key={`${index} + ${resource.link}`}className={styles['randomizer-question-resource']}>
                                         <Link color='teal.500' href={resource.link} isExternal>
                                             {resource.title}
                                         </Link>
-                                    </div>
+                                    </li>
                                 })
                             }
+                            </ul>
                         </AccordionPanel>
                     </AccordionItem>
                 </Accordion>

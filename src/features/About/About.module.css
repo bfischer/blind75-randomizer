@@ -1,0 +1,19 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 100%;
+}
+
+.about .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+}
+
+@media screen and (max-width: 480px) {
+    .about .about-content {
+        padding-bottom: 50px;
+    }
+}

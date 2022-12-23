@@ -5,9 +5,16 @@ import { Link as RouterLink } from 'react-router-dom'
 const Navbar = (props) => {
     return <>
         <header className={styles['navbar']}>
-            <RouterLink to='/'>
-                <div className={styles['navbar-title']}>Blind75</div>
-            </RouterLink>
+            <div className={styles['navbar-title']}>
+                <RouterLink to='/'>
+                    Blind75
+                </RouterLink>
+            </div>
+            <div className={styles['navbar-item']}>
+                <RouterLink to='/about'>
+                    About
+                </RouterLink>
+            </div>
         </header>
     </>
 }
