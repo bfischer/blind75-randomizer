@@ -15,7 +15,6 @@ import {
     Stack,
     Tag } from '@chakra-ui/react'
 import styles from "./Randomizer.module.css";
-import HtmlRenderer from "../../components/HtmlRenderer";
 import questions from "../../data/questions";
 
 const initialFilterState = {
